@@ -29,7 +29,7 @@
 #        Designates the end of options to be parsed
 
 
-LENGTH=64        #! Should be the actual length minus one
+LENGTH=64        #! Number of characters in password
 NUMBER="0-9"     #! Numbers allowed
 UPPERCASE="A-Z"  #! Upprecase letters allowed
 LOWERCASE="a-z"  #! Lowercase letters allowed
