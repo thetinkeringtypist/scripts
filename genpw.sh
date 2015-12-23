@@ -22,7 +22,8 @@
 #     --no-lower
 #        Removes the character set for lowercase numbers
 #
-#     -n | --no-newline
+#     --no-newline
+#        Do no add a newline character at the end of the password
 #
 #     n
 #        The number of characters to produce. Must be greater than 0.
