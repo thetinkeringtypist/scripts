@@ -6,7 +6,7 @@ Scripts that I have found useful.
 The List
 --------
 List of Scripts:
- * [Endianness (byteorder)](https://github.com/bezeredi/scripts/blon/master/endianness.py)
+ * [Endianness (byteorder)](https://github.com/bezeredi/scripts/blob/master/endianness.py)
  * [Native GCC Flags](https://github.com/bezeredi/scripts/blob/master/gcc-flags.sh)
  * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
 
