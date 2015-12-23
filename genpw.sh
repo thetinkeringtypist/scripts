@@ -7,7 +7,7 @@
 #        a password. It also requires n to be greater than 0.
 #  
 #  OPTIONS
-#     --help | -h
+#     -h | --help
 #        Displays usage information
 #
 #     --no-special
@@ -22,6 +22,8 @@
 #     --no-lower
 #        Removes the character set for lowercase numbers
 #
+#     -n | --no-newline
+#
 #     n
 #        The number of characters to produce. Must be greater than 0.
 #
@@ -35,6 +37,7 @@ UPPERCASE="A-Z"  #! Upprecase letters allowed
 LOWERCASE="a-z"  #! Lowercase letters allowed
 SPECIAL="_#!&^$" #! Special characters allowed
 PROGNAME=`basename "$0"`
+ECHO_ARGS=""
 
 
 #! Parse options
@@ -42,18 +45,19 @@ while [[ "$1" != "" ]]; do
 	case "$1" in
 		"--help" | "-h")
 			echo "Usage: $PROGNAME [--no-special] [--no-number] [--no-upper]" \
-			     "[--no-lower] [n] [--]"
+			     "[--no-lower] [--no-newline] [<n>] [--]"
 			exit;;
 		"--no-special") SPECIAL="";   shift;;
 		"--no-number")  NUMBER="";    shift;;
 		"--no-upper")   UPPERCASE=""; shift;;
 		"--no-lower")   LOWERCASE=""; shift;;
-		"--")                         shift; break;;
+		"--no-newline") ECHO_ARGS="-n"; shift;;
+		"--")           shift; break;;
 		*)
 			#! Check the length
 			if [ "$1" -eq "$1" ] 2>/dev/null; then
 				if [ "$1" -le 0 ]; then
-					echo "$PROGNAME: n must be greater than 0. Exit."
+					echo "$PROGNAME: <n> must be greater than 0. Exit."
 					exit
 				fi
 				LENGTH="$1"
@@ -79,5 +83,5 @@ fi
 
 #! Generate the password
 < /dev/urandom tr -dc ${UPPERCASE}${LOWERCASE}${NUMBER}${SPECIAL} \
-	| head --bytes=${LENGTH};echo;
+	| head --bytes=${LENGTH}; eval echo "$ECHO_ARGS"
 

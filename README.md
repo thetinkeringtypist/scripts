@@ -1,17 +1,17 @@
 My Scripts
 ==========
-Scripts that I find useful.
+Scripts that I have found useful.
 
 
 The List
 --------
 List of Scripts:
- * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
+ * [Endianness (byteorder)](https://github.com/bezeredi/scripts/blon/master/endianness.py)
  * [Native GCC Flags](https://github.com/bezeredi/scripts/blob/master/gcc-flags.sh)
-
+ * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
 
 License
 -------
-There is no license affiliated with these scripts. Feel free to use them at
-your own discretion.
+Feel free to use these scripts at your discretion. Just provide a link back to
+this repository. Enjoy!
 
