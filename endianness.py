@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 #
-#! A script to determine the byteorder (endianness) of this machine
+#!  Author: Bezeredi, Evan D.
 #
-#  Author: Bezeredi, Evan D.
+#! A script to determine the byteorder (endianness) of this machine
 import sys
 
 

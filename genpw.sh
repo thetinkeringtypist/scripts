@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+#! Author: Bezeredi, Evan D.
+#
 #! This script does not gaurantee that a character from each category is
 #	present in the generated password
 #
