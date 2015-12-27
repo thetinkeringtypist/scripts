@@ -9,6 +9,7 @@ List of Scripts:
  * [Endianness (byteorder)](https://github.com/bezeredi/scripts/blob/master/endianness.py)
  * [Native GCC Flags](https://github.com/bezeredi/scripts/blob/master/gcc-flags.sh)
  * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
+ * [C and C++ Header Finder](https://github.com/bezeredi/scripts/blob/master/find-headers.sh)
 
 License
 -------
