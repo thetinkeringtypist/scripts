@@ -14,8 +14,6 @@ List of Scripts:
 
 License
 -------
-Copyright (c) 2015 Bezeredi, Evan D.
-
 Feel free to use these scripts at your discretion. Just provide a link back to
 this repository. Enjoy!
 
