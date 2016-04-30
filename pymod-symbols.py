@@ -5,6 +5,7 @@
 #!  A script to determine the symbols in a given module
 import sys
 import os
+import importlib
 
 
 #! Main function
@@ -14,7 +15,7 @@ def main():
 		exit()
 
 	module_name = sys.argv[1]
-	module = __import__(module_name)
+	module = importlib.import_module(module_name)
 
 	dictionary = get_module_symbols(module)
 	for symbol, value in dictionary.iteritems():
