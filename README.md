@@ -10,6 +10,7 @@ List of Scripts:
  * [Native GCC Flags](https://github.com/bezeredi/scripts/blob/master/gcc-flags.sh)
  * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
  * [C and C++ Header Finder](https://github.com/bezeredi/scripts/blob/master/find-headers.sh)
+ * [Python Module Symbol Reader](https://github.com/bezeredi/scripts/blob/master/pymod-symbols.py)
 
 License
 -------
