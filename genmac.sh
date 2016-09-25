@@ -11,6 +11,9 @@
 #     --no-number
 #        Removes the character set for numbers
 #
+#     --no-letter
+#        Removes the character set for letters
+#
 #     --upper
 #        Outputs characters in uppercase instead of lowercase
 #
@@ -36,11 +39,12 @@ while [[ "$1" != "" ]]; do
 			echo "Usage: $PROGNAME [--no-number] [--upper] [--lower]" \
 			     "[--no-newline] [--]"
 			exit;;
-		"--no-number")  NUM_RANGE="";    shift;;
-		"--upper")   CHAR_RANGE="A-F"; shift;;
-		"--lower")   CHAR_RANGE="a-f"; shift;;
-		"--no-newline") NO_NEWLINE=true; shift;;
-		"--")           shift; break;;
+		"--no-number")  NUM_RANGE="";     shift;;
+		"--no-letter")  CHAR_RANGE="";    shift;;
+		"--upper")      CHAR_RANGE="A-F"; shift;;
+		"--lower")      CHAR_RANGE="a-f"; shift;;
+		"--no-newline") NO_NEWLINE=true;  shift;;
+		"--")                     shift;  break;;
 		*)
 			echo "$PROGNAME: unrecognized option: $1. Exit."
 			exit;;
