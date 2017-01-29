@@ -12,6 +12,9 @@
 #     -h | --help
 #        Displays usage information
 #
+#     --special <characters>
+#        The user specified list of special characters allowed
+#
 #     --no-special
 #        Remove the character set for special characters
 #
@@ -28,7 +31,8 @@
 #        Do no add a newline character at the end of the password
 #
 #     n
-#        The number of characters to produce. Must be greater than 0.
+#        The user specified number of characters to produce.
+#        Must be greater than 0. Defaults to 64.
 #
 #     --
 #        Designates the end of options to be parsed
@@ -38,7 +42,7 @@ LENGTH=64        #! Number of characters in password
 NUMBER="0-9"     #! Numbers allowed
 UPPERCASE="A-Z"  #! Upprecase letters allowed
 LOWERCASE="a-z"  #! Lowercase letters allowed
-SPECIAL="_#!&^$" #! Special characters allowed
+SPECIAL="~!@#$%^&*()_+=-][}[|\\:;'\"<>,.?/" #! Special characters allowed
 PROGNAME=`basename "$0"`
 ECHO_ARGS=""
 
@@ -47,15 +51,17 @@ ECHO_ARGS=""
 while [[ "$1" != "" ]]; do
 	case "$1" in
 		"--help" | "-h")
-			echo "Usage: $PROGNAME [--no-special] [--no-number] [--no-upper]" \
-			     "[--no-lower] [--no-newline] [<n>] [--]"
+			echo "Usage: $PROGNAME [--special <characters>] [--no-special]" \
+			     "[--no-number] [--no-upper] [--no-lower] [--no-newline]" \
+				  "[<n>] [--]"
 			exit;;
-		"--no-special") SPECIAL="";   shift;;
-		"--no-number")  NUMBER="";    shift;;
-		"--no-upper")   UPPERCASE=""; shift;;
-		"--no-lower")   LOWERCASE=""; shift;;
-		"--no-newline") ECHO_ARGS="-n"; shift;;
-		"--")           shift; break;;
+		"--special")    shift; SPECIAL="$1";   shift;;
+		"--no-special")        SPECIAL="";     shift;;
+		"--no-number")         NUMBER="";      shift;;
+		"--no-upper")          UPPERCASE="";   shift;;
+		"--no-lower")          LOWERCASE="";   shift;;
+		"--no-newline")        ECHO_ARGS="-n"; shift;;
+		"--")                                  shift;  break;;
 		*)
 			#! Check the length
 			if [ "$1" -eq "$1" ] 2>/dev/null; then
@@ -75,8 +81,8 @@ done
 
 
 #! Check character sets
-if [[ "$SPECIAL" == ""   &&
-		"$NUMBER" == ""    &&
+if [[ "$SPECIAL"   == "" &&
+		"$NUMBER"    == "" &&
 		"$UPPERCASE" == "" &&
 		"$LOWERCASE" == "" ]]; then
 	echo "$PROGNAME: requires at least one non-empty character set. Exit."
