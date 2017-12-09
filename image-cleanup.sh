@@ -9,7 +9,7 @@
 #
 
 PROGNAME=$(basename "$0")
-kernel_version=$(uname -r | egrep -o ".*[0-9]")
+kernel_version=$(uname -r | grep -o ".*[0-9]")
 candidate_packages=$(dpkg-query --show --showformat='${Package}\n' \
 	linux-image-* linux-headers-* \
 	| grep --invert-match "$kernel_version")
