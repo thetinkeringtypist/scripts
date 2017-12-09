@@ -13,6 +13,7 @@ List of Scripts:
  * [Python Module Symbol Reader](https://github.com/bezeredi/scripts/blob/master/pymod-symbols.py)
  * [MAC Address Generator](https://github.com/bezeredi/scripts/blob/master/genmac.sh)
  * [Battery Percentage](https://github.com/bezeredi/scripts/blob/master/battery.sh)
+ * [Linux Image Cleanup](https://github.com/bezeredi/scripts/blob/master/image-cleanup.sh)
 
 License
 -------
