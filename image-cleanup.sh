@@ -33,6 +33,8 @@ if [ "$packages" == "" ]; then
 	exit
 else
 	sudo apt-get purge $(echo "$packages")
+
+	echo "Removing stale kernel modules from /lib/module"
 	sudo find /lib/modules -mindepth 1 -maxdepth 1 \
 		-not -name "$kernel_version*" -exec rm -rf {} \;
 fi
