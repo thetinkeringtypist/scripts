@@ -8,7 +8,7 @@ The List
 List of Scripts:
  * [Zero Out Free Space on Disk](https://github.com/bezeredi/scripts/blob/master/zero-disk.sh)
  * [Linux Image Cleanup](https://github.com/bezeredi/scripts/blob/master/image-cleanup.sh)
- * [Battery Percentage](https://github.com/bezeredi/scripts/blob/master/battery.sh)
+ * [Laptop Battery Percentage](https://github.com/bezeredi/scripts/blob/master/battery.sh)
  * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
  * [Native GCC Flags](https://github.com/bezeredi/scripts/blob/master/gcc-flags.sh)
  * [Endianness (byteorder)](https://github.com/bezeredi/scripts/blob/master/endianness.py)
