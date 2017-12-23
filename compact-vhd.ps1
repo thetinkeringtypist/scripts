@@ -1,6 +1,10 @@
 #! Script to compress a VHD image after the unused
 #  space has been defragged and/or zeroed out
 #
+#! NOTE: This script is used on Virtual Hard Disk Files (.vhd) NOT .vhdx files.
+#! NOTE: This script was also written for use with Windows Server 2012 R2 where
+#        Hyper-V was used as the hypervisor.
+#
 #! Author: Bezeredi, Evan D.
 
 $vms = $null
