@@ -11,6 +11,7 @@ Scripts that I have found useful.
  * [Linux Image Cleanup](https://github.com/bezeredi/scripts/blob/master/image-cleanup.sh)
  * [Laptop Battery Percentage](https://github.com/bezeredi/scripts/blob/master/battery.sh)
  * [Password Generator](https://github.com/bezeredi/scripts/blob/master/genpw.sh)
+ * [Video Finder (by Resolution)](https://github.com/bezeredi/scripts/blob/master/video-finder.sh)
  * [MAC Address Generator](https://github.com/bezeredi/scripts/blob/master/genmac.sh)
 
 ### Scripts for Development:
