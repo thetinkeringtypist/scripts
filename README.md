@@ -9,7 +9,7 @@ Scripts that I have found useful.
 
 #### Scripts for Utilities/Usefulness:
  * [Public IP of This Machine](https://github.com/thetinkeringtypist/scripts/blob/master/public-ip.sh)
- * [Linux Image Cleanup](https://github.com/thetinkeringtypist/scripts/blob/master/image-cleanup.sh)
+ * [Linux Kernel Cleanup](https://github.com/thetinkeringtypist/scripts/blob/master/kernel-cleanup.sh)
  * [Laptop Battery Percentage](https://github.com/thetinkeringtypist/scripts/blob/master/battery.sh)
  * [Password Generator](https://github.com/thetinkeringtypist/scripts/blob/master/genpw.sh)
  * [Video Finder (by Resolution)](https://github.com/thetinkeringtypist/scripts/blob/master/video-finder.sh)
