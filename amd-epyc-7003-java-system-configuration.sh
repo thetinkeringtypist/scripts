@@ -17,7 +17,7 @@ system_configuration() {
 
 	# Kernel runtime configs
 	echo 10000    > /proc/sys/kernel/sched_cfs_bandwidth_slice_us
-	echo 0        > /proc/sys/kernel/sched_child_run_first
+	echo 0        > /proc/sys/kernel/sched_child_runs_first
 	echo 16000000 > /proc/sys/kernel/sched_latency_ns
 	echo 1000     > /proc/sys/kernel/sched_migration_cost_ns
 	echo 28000000 > /proc/sys/kernel/sched_min_granularity_ns
@@ -30,7 +30,7 @@ system_configuration() {
 	echo 50000000 > /proc/sys/kernel/sched_wakeup_granularity_ns
 
 	# Virtual memory runtime configs
-	echo 3000     > /proc/sys/vm/dirty_expire_centicecs
+	echo 3000     > /proc/sys/vm/dirty_expire_centisecs
 	echo 500      > /proc/sys/vm/dirty_writeback_centisecs
 	echo 40       > /proc/sys/vm/dirty_ratio
 	echo 10       > /proc/sys/vm/dirty_background_ratio
@@ -38,8 +38,8 @@ system_configuration() {
 
 	# Memory runtime configs
 	echo 0        > /proc/sys/kernel/numa_balancing
-	echo always   > /sys/kernel/mm/transparent_hugepages/defrag
-	echo always   > /sys/kernel/mm/transparent_hugepages/enabled
+	echo always   > /sys/kernel/mm/transparent_hugepage/defrag
+	echo always   > /sys/kernel/mm/transparent_hugepage/enabled
 
 	# Shell resource limits: max number of open file descriptors
 	ulimit -n 1024000
@@ -68,8 +68,8 @@ system_configuration() {
 # Reference: https://www.amd.com/content/dam/amd/en/documents/epyc-technical-docs/tuning-guides/java-tuning-guide-amd-epyc7003-series-processors.pdf
 # Reference: https://sthbrx.github.io/blog/2016/07/27/get-off-my-lawn-separating-docker-workloads-using-cgroups/
 #
-cgroup_configuration() 
-	if [[ ! command -v cgcreate &> /dev/null ]]; then
+cgroup_configuration() {
+	if ! command -v cgcreate &> /dev/null; then
     		echo "cgcreate not available. Cannot create cgroups."
     		return
 	fi
@@ -127,7 +127,7 @@ cgroup_configuration()
 	numa_nodes+=(7)
 
 	# Create one cgroup per CCD
-	for (( i=0; i<16; i++)); do
+	for ((i=0; i<16; i++)); do
 		group_name="ccd$i"
 
 		cgcreate -g cpuset:$group_name
@@ -144,7 +144,7 @@ cgroup_configuration()
 main() {
 	# Check to see if running as root
 	userid=$(id -u)
-	if (($id != 0)); then
+	if ((userid != 0)); then
 		echo "Script not executed as root. Exiting."
 		return
 	fi
